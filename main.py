@@ -782,3 +782,166 @@ for i in li:
         pass
     else:
         print(i)
+print("")
+# function
+# Python Functions is a block of statements that return the specific task.
+def fun():
+    print("welcome to GFG")
+fun()
+print("")
+# Defining and calling a function with parameters
+def add(num1:int,num2:int)->int:
+    num3=num1+num2
+    return num3
+num1, num2= 10,15
+ans=add(num1,num2)
+print(f"the addition of  {num1}and {num2} result {ans}.")
+print("")
+# Arguments of a Python Function
+def evenOdd(x):
+    if(x%2==0):
+       print("even")
+    else:
+       print("odd")
+evenOdd(2)
+evenOdd(3)
+print("")
+# Types of Arguments
+# Default arguments
+def myFun(x,y=50):
+    print("x:",x)
+    print("y:",y)
+myFun(10)
+print("")
+# Keyword arguments
+def student(firstname,lastname):
+    print(firstname,lastname)
+student(firstname='ashish',lastname='mundra')
+student(lastname='mundra',firstname='ashish')
+print("")
+# Variable-length arguments
+def myFun(*argv):
+    for arg in argv:
+        print(arg)
+myFun('hello','welcome','to','ashishmundra')
+print("")
+# Variable length keyword arguments
+def myFun(**kwargs):
+    for key ,value in kwargs .items():
+        print("%s == %s"%(key,value))
+myFun(first ='ashish',mid="",last='mundra')
+print("")
+# Adding Docstring to the function
+def evenOdd(x):
+    if(x % 2==0 ):
+        print("even")
+    else:
+        print("odd")
+print(evenOdd.__doc__)
+print("")
+# Return statement in Python function
+def square_value(num):
+    return  num**2
+print(square_value(2))
+print(square_value(-5))
+print("")
+# Pass by Reference or pass by value
+def myFun(x):
+  x[0] = 20
+lst = [10,11,12,13,14,15]
+myFun(lst)
+print(lst)
+print("")
+
+#
+def swap(x,y):
+    temp = x
+    x = y
+    y = temp
+x = 2
+y = 3
+swap(x,y)
+print(x)
+print(y)
+print("")
+# Anonymous functions in Python Function
+def cube (x): return x*x*x
+cube_v2 = lambda x:x*x*x
+print(cube(6))
+print(cube_v2(6))
+print(cube(7))
+print(cube_v2(7))
+print("")
+# Python Function within Functions
+
+def f1():
+    s='ashish mundra'
+    def f2():
+        print(s)
+    f2()
+f1()
+print("")
+# Python * args
+# *args in function definitions in python is used to pass a variable number of arguments to a function.
+def myFun(*argv):
+    for arg in argv:
+        print(arg)
+myFun('hello','welcome','to','ashishmundra')
+print("")
+
+def myFun(arg1,*argv):
+    print("First argument:",arg1)
+    for arg in argv:
+     print("Next argument through *argv:",arg)
+myFun('Hello','welcome','to','ashish mundra')
+print("")
+# Python ** kwargs
+def myFun(**kwargs):
+    for key,value in kwargs.items():
+        print("%s==%s"%(key,value))
+myFun(first='ashish',mid='',last='mundra')
+print("")
+# yield
+def simpleGeneratorFun():
+    yield 1
+    yield 2
+    yield 3
+for value in simpleGeneratorFun():
+    print(value)
+print("")
+#
+def nextSquare():
+    i=1
+    while True:
+        yield i*i
+        i += 1
+for num in nextSquare():
+    if num>100:
+        break
+    print(num)
+print("")
+# Python lambda
+# This function can have any number of arguments but only one expression, which is evaluated and returned.
+# One is free to use lambda functions wherever function objects are required.
+string ='ashishmundra'
+print(lambda string:string)
+print("")
+# Global and Local Variables in Python
+# Global variables are those which are not defined inside any function and have a global scope whereas local variables are those which are defined inside a function and its scope is limited to that function only.
+def f():
+    s="me too."
+    print(s)
+s="ashishmundra"
+f()
+print(s)
+print("")
+# Global keyword in the python
+# Variables that are only referenced inside a function are implicitly global.
+# We use a global keyword to use a global variable inside a function.
+a=10
+b=15
+def add():
+    c=a+b
+    print(c)
+add()
+print("")
